@@ -1,10 +1,10 @@
 const data = [
-  { place:'Switzerland Alps', title:'SAINT', title2:'ANTONIEN', description:'Tucked away in the Switzerland Alps...', image:'images/IMG_1244.jpg' },
-  { place:'Japan Alps', title:'NAGANO', title2:'PREFECTURE', description:'Nagano Prefecture, set within the majestic Japan Alps...', image:'images/IMG_1245.jpg' },
-  { place:'Sahara Desert - Morocco', title:'MARRAKECH', title2:'MERZOUGA', description:'The journey from Marrakech to the tranquil sands of Merzouga...', image:'images/IMG_1246.jpg' },
-  { place:'Sierra Nevada - USA', title:'YOSEMITE', title2:'NATIONAL PARK', description:'Yosemite National Park is a showcase of the American wilderness...', image:'images/IMG_1247.jpg' },
-  { place:'Tarifa - Spain', title:'LOS LANCES', title2:'BEACH', description:'Los Lances Beach in Tarifa is a coastal paradise...', image:'images/IMG_1248.jpg' },
-  { place:'Cappadocia - Turkey', title:'Göreme', title2:'Valley', description:'Göreme Valley in Cappadocia is a historical marvel...', image:'images/IMG_1249.jpg' },
+  { place:'Switzerland Alps', title:'SAINT', title2:'ANTONIEN', description:'Tucked away in the Switzerland Alps...', image:'images/IMG_1244.JPG' },
+  { place:'Japan Alps', title:'NAGANO', title2:'PREFECTURE', description:'Nagano Prefecture, set within the majestic Japan Alps...', image:'images/IMG_1245.JPG' },
+  { place:'Sahara Desert - Morocco', title:'MARRAKECH', title2:'MERZOUGA', description:'The journey from Marrakech to the tranquil sands of Merzouga...', image:'images/IMG_1246.JPG' },
+  { place:'Sierra Nevada - USA', title:'YOSEMITE', title2:'NATIONAL PARK', description:'Yosemite National Park is a showcase of the American wilderness...', image:'images/IMG_1247.JPG' },
+  { place:'Tarifa - Spain', title:'LOS LANCES', title2:'BEACH', description:'Los Lances Beach in Tarifa is a coastal paradise...', image:'images/IMG_1248.JPG' },
+  { place:'Cappadocia - Turkey', title:'Göreme', title2:'Valley', description:'Göreme Valley in Cappadocia is a historical marvel...', image:'images/IMG_1249.JPG' },
 ];
 
 // Helpers
