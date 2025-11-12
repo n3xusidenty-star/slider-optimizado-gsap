@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500&display=swap");
+
 body {
   margin: 0;
   background-color: #1a1a1a;
-  color: #FFFFFFDD;
+  color: rgba(255,255,255,0.87);
   position: relative;
   overflow: hidden;
   font-family: "Inter", sans-serif;
@@ -17,28 +18,17 @@ body {
   box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.6);
 }
 
-#btn {
-  position: absolute;
-  top: 690px;
-  left: 16px;
-  z-index: 99;
-}
-
 .card-content {
   position: absolute;
   left: 0;
   top: 0;
-  color: #FFFFFFDD;
+  color: rgba(255,255,255,0.87);
   padding-left: 16px;
 }
 
 .content-place {
   margin-top: 6px;
   font-size: 13px;
-  font-weight: 500;
-}
-
-.content-place {
   font-weight: 500;
 }
 
@@ -52,8 +42,8 @@ body {
 .content-start {
   width: 30px;
   height: 5px;
-  border-radius: 99px;
-  background-color: #FFFFFFDD;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.87);
 }
 
 .details {
@@ -77,7 +67,7 @@ body {
   content: "";
   width: 30px;
   height: 4px;
-  border-radius: 99px;
+  border-radius: 50%;
   background-color: white;
 }
 .details .title-1,
@@ -92,13 +82,12 @@ body {
   height: 100px;
   overflow: hidden;
 }
-.details > .desc {
+.details > .desc,
+.details > .cta {
   margin-top: 16px;
-  width: 500px;
+  max-width: 90%; /* ✅ responsive */
 }
 .details > .cta {
-  width: 500px;
-  margin-top: 24px;
   display: flex;
   align-items: center;
 }
@@ -107,25 +96,29 @@ body {
   background-color: #ecad29;
   width: 36px;
   height: 36px;
-  border-radius: 99px;
+  border-radius: 50%;
   color: white;
   display: grid;
   place-items: center;
+  transition: all 0.3s ease;
 }
-.details > .cta > .bookmark svg {
-  width: 20px;
-  height: 20px;
+.details > .cta > .bookmark:hover {
+  background-color: #d99a1f;
 }
 .details > .cta > .discover {
   border: 1px solid #ffffff;
   background-color: transparent;
   height: 36px;
-  border-radius: 99px;
+  border-radius: 50%;
   color: #ffffff;
   padding: 4px 24px;
   font-size: 12px;
   margin-left: 16px;
   text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.details > .cta > .discover:hover {
+  background-color: #ffffff22;
 }
 
 nav {
@@ -170,7 +163,7 @@ nav > div:last-child > .active:after {
   position: absolute;
   content: "";
   height: 3px;
-  border-radius: 99px;
+  border-radius: 50%;
   background-color: #ecad29;
 }
 
@@ -186,18 +179,22 @@ nav > div:last-child > .active:after {
 
 .pagination {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   display: inline-flex;
 }
 .pagination > .arrow {
   z-index: 60;
   width: 50px;
   height: 50px;
-  border-radius: 999px;
+  border-radius: 50%;
   border: 2px solid #ffffff55;
   display: grid;
   place-items: center;
+  transition: all 0.3s ease;
+}
+.pagination > .arrow:hover {
+  background-color: #ffffff22;
 }
 .pagination > .arrow:nth-child(2) {
   margin-left: 20px;
