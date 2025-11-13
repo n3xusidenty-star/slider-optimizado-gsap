@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba Fondo Dinámico Final</title>
+  <title>Prueba Fondo Dinámico</title>
   <style>
     body {
       margin: 0;
@@ -44,41 +44,40 @@
 </head>
 <body>
   <div id="background"></div>
-  <div id="thumbnails">
-    <div class="thumb" data-img="images/img_1244.jpg" style="background-image: url('images/img_1244.jpg')"></div>
-    <div class="thumb" data-img="images/img_1245.jpg" style="background-image: url('images/img_1245.jpg')"></div>
-    <div class="thumb" data-img="images/img_1246.jpg" style="background-image: url('images/img_1246.jpg')"></div>
-    <div class="thumb" data-img="images/img_1247.jpg" style="background-image: url('images/img_1247.jpg')"></div>
-    <div class="thumb" data-img="images/img_1248.jpg" style="background-image: url('images/img_1248.jpg')"></div>
-    <div class="thumb" data-img="images/img_1249.jpg" style="background-image: url('images/img_1249.jpg')"></div>
-  </div>
+  <div id="thumbnails"></div>
 
   <script>
+    // Lista de imágenes en minúscula
+    const slides = [
+      { image: "images/img_1244.jpg" },
+      { image: "images/img_1245.jpg" },
+      { image: "images/img_1246.jpg" },
+      { image: "images/img_1247.jpg" },
+      { image: "images/img_1248.jpg" },
+      { image: "images/img_1249.jpg" }
+    ];
+
     const bg = document.getElementById("background");
-    const thumbs = document.querySelectorAll(".thumb");
+    const thumbsContainer = document.getElementById("thumbnails");
 
     // Inicializa con la primera imagen
-    bg.style.backgroundImage = "url('images/img_1244.jpg')";
+    bg.style.backgroundImage = `url('')`;
 
-    thumbs.forEach(thumb => {
+    // Genera miniaturas dinámicamente
+    slides.forEach(slide => {
+      const thumb = document.createElement("div");
+      thumb.className = "thumb";
+      thumb.style.backgroundImage = `url('')`;
+      thumb.dataset.img = slide.image;
+      thumbsContainer.appendChild(thumb);
+
       thumb.addEventListener("click", () => {
-        const img = thumb.getAttribute("data-img");
-        console.log("Intentando cargar:", img); // Depuración
-
-        const loader = new Image();
-        loader.onload = () => {
-          console.log("Imagen cargada correctamente:", img);
-          bg.style.opacity = 0;
-          setTimeout(() => {
-            bg.style.backgroundImage = `url('')`;
-            bg.style.opacity = 1;
-          }, 400);
-        };
-        loader.onerror = () => {
-          console.error("Error al cargar la imagen:", img);
-          alert("No se pudo cargar la imagen: " + img);
-        };
-        loader.src = img;
+        console.log("Clic en miniatura:", slide.image);
+        bg.style.opacity = 0;
+        setTimeout(() => {
+          bg.style.backgroundImage = `url('')`;
+          bg.style.opacity = 1;
+        }, 400);
       });
     });
   </script>
