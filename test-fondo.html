@@ -7,6 +7,7 @@
     body {
       margin: 0;
       font-family: sans-serif;
+      background: #000;
     }
     #background {
       position: fixed;
@@ -16,7 +17,8 @@
       background-size: cover;
       background-position: center;
       z-index: -1;
-      transition: background-image 0.5s ease-in-out;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
     #thumbnails {
       position: absolute;
@@ -57,7 +59,19 @@
     thumbs.forEach(thumb => {
       thumb.addEventListener("click", () => {
         const img = thumb.getAttribute("data-img");
-        bg.style.backgroundImage = `url('')`;
+        const test = new Image();
+        test.onload = () => {
+          // transición suave
+          bg.style.opacity = 0;
+          setTimeout(() => {
+            bg.style.backgroundImage = `url('')`;
+            bg.style.opacity = 1;
+          }, 400);
+        };
+        test.onerror = () => {
+          alert("No se pudo cargar la imagen: " + img);
+        };
+        test.src = img;
       });
     });
   </script>
