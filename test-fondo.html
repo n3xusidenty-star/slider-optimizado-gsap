@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba Fondo Dinámico Debug</title>
+  <title>Prueba Fondo Dinámico Final</title>
   <style>
     body {
       margin: 0;
@@ -45,12 +45,12 @@
 <body>
   <div id="background"></div>
   <div id="thumbnails">
-    <div class="thumb" data-img="images/IMG_1244.jpg" style="background-image: url('images/IMG_1244.jpg')"></div>
-    <div class="thumb" data-img="images/IMG_1245.jpg" style="background-image: url('images/IMG_1245.jpg')"></div>
-    <div class="thumb" data-img="images/IMG_1246.jpg" style="background-image: url('images/IMG_1246.jpg')"></div>
-    <div class="thumb" data-img="images/IMG_1247.jpg" style="background-image: url('images/IMG_1247.jpg')"></div>
-    <div class="thumb" data-img="images/IMG_1248.jpg" style="background-image: url('images/IMG_1248.jpg')"></div>
-    <div class="thumb" data-img="images/IMG_1249.jpg" style="background-image: url('images/IMG_1249.jpg')"></div>
+    <div class="thumb" data-img="images/img_1244.jpg" style="background-image: url('images/img_1244.jpg')"></div>
+    <div class="thumb" data-img="images/img_1245.jpg" style="background-image: url('images/img_1245.jpg')"></div>
+    <div class="thumb" data-img="images/img_1246.jpg" style="background-image: url('images/img_1246.jpg')"></div>
+    <div class="thumb" data-img="images/img_1247.jpg" style="background-image: url('images/img_1247.jpg')"></div>
+    <div class="thumb" data-img="images/img_1248.jpg" style="background-image: url('images/img_1248.jpg')"></div>
+    <div class="thumb" data-img="images/img_1249.jpg" style="background-image: url('images/img_1249.jpg')"></div>
   </div>
 
   <script>
@@ -58,12 +58,12 @@
     const thumbs = document.querySelectorAll(".thumb");
 
     // Inicializa con la primera imagen
-    bg.style.backgroundImage = "url('images/IMG_1244.jpg')";
+    bg.style.backgroundImage = "url('images/img_1244.jpg')";
 
     thumbs.forEach(thumb => {
       thumb.addEventListener("click", () => {
         const img = thumb.getAttribute("data-img");
-        console.log("Intentando cargar:", img); // 👀 Depuración
+        console.log("Intentando cargar:", img); // Depuración
 
         const loader = new Image();
         loader.onload = () => {
@@ -78,7 +78,7 @@
           console.error("Error al cargar la imagen:", img);
           alert("No se pudo cargar la imagen: " + img);
         };
-        loader.src = img; // fuerza la carga antes de aplicarlo
+        loader.src = img;
       });
     });
   </script>
