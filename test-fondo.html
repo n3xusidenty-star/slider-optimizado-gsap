@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba Fondo Dinámico Final</title>
+  <title>Prueba Fondo Dinámico Debug</title>
   <style>
     body {
       margin: 0;
@@ -63,9 +63,11 @@
     thumbs.forEach(thumb => {
       thumb.addEventListener("click", () => {
         const img = thumb.getAttribute("data-img");
+        console.log("Intentando cargar:", img); // 👀 Depuración
+
         const loader = new Image();
         loader.onload = () => {
-          // transición suave
+          console.log("Imagen cargada correctamente:", img);
           bg.style.opacity = 0;
           setTimeout(() => {
             bg.style.backgroundImage = `url('')`;
@@ -73,6 +75,7 @@
           }, 400);
         };
         loader.onerror = () => {
+          console.error("Error al cargar la imagen:", img);
           alert("No se pudo cargar la imagen: " + img);
         };
         loader.src = img; // fuerza la carga antes de aplicarlo
